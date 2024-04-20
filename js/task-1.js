@@ -2,8 +2,6 @@
 
 // Використай цей стартовий код і виконай рефакторинг. Після оголошення об'єкта ми додали виклики методів. У консоль будуть виведені результати їх роботи. Будь ласка, нічого там не змінюй.
 
-
-
 const customer = {
   username: "Mango",
   balance: 24000,
@@ -11,24 +9,24 @@ const customer = {
   orders: ["Burger", "Pizza", "Salad"],
   // Change code below this line
   getBalance() {
-    return balance;
+    return this.balance;
   },
   getDiscount() {
-    return discount;
+    return this.discount;
   },
   setDiscount(value) {
-    discount = value;
+    this.discount = value;
   },
   getOrders() {
-    return orders;
+    return this.orders;
   },
   addOrder(cost, order) {
-    balance -= cost - cost * discount;
-    orders.push(order);
+    this.balance -= cost - cost * this.discount;
+    this.orders.push(order);
   },
   // Change code above this line
 };
-
+console.log('---TASK 1---');
 customer.setDiscount(0.15);
 console.log(customer.getDiscount()); // 0.15
 customer.addOrder(5000, "Steak");

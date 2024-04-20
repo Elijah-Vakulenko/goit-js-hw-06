@@ -11,6 +11,9 @@
 
 
 const builder = new StringBuilder(".");
+
+console.log('---TASK 3---');
+
 console.log(builder.getValue()); // "."
 builder.padStart("^");
 console.log(builder.getValue()); // "^."
