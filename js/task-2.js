@@ -11,7 +11,34 @@
 
 console.log('---TASK 2---');
 
+class Storage {
+    #items;
+
+    constructor(value) {
+        this.#items = value
+    }
+
+    getItems() {
+        return this.#items;
+        
+    }
+    addItem(newItem) {
+        this.#items.push(newItem);
+    }
+
+    removeItem(itemToRemove) {
+        const itemCheck = this.#items.indexOf(itemToRemove);
+        if (itemCheck !== -1) {
+            this.#items.splice(itemCheck, 1);
+        }
+    }
+
+}
+
 const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+
+
+
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
 
 storage.addItem("Droid");
@@ -22,3 +49,5 @@ console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 
 storage.removeItem("Scaner");
 console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+
